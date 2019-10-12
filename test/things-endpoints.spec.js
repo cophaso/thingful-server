@@ -203,10 +203,10 @@ describe('Things Endpoints', function() {
       )
  
     describe(`GET /api/things/:thing_id`, () => {
-      it(`responds with 401 'Missing basic token' when no basic token`, () => {
+      it(`responds with 401 'Missing bearer token' when no bearer token`, () => {
         return supertest(app)
           .get(`/api/things/123`)
-          .expect(401, { error: `Missing basic token` })
+          .expect(401, { error: `Missing bearer token` })
       })
 
       it(`responds 401 'Unauthorized request' when no credentials in token`, () => {
